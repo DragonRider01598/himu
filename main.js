@@ -1,6 +1,10 @@
 const { Api, TelegramClient } = require('telegram');
 const { StringSession } = require('telegram/sessions');
 const dotenv = require('dotenv');
+const express = require('express');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 
@@ -40,5 +44,16 @@ async function main() {
         }
     });
 }
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
 
 main().catch(console.error);
