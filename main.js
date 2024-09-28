@@ -31,7 +31,8 @@ async function main() {
 
             if (channelUsername && SOURCE_CHANNELS.includes(channelUsername) && keywords.some(keyword => inputString.includes(keyword))) {
                 try {
-                    await client.sendMessage(TARGET_CHANNEL, { message: inputString });
+                    await client.sendMessage(TARGET_CHANNEL, { message: event.message.message });
+                    console.log(event.message.message)
                 } catch (err) {
                     console.error('Error forwarding message:', err);
                 }
