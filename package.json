@@ -1,0 +1,24 @@
+{
+  "name": "himu",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DragonRider01598/himu.git"
+  },
+  "author": "DragonRider01598",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DragonRider01598/himu/issues"
+  },
+  "homepage": "https://github.com/DragonRider01598/himu#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "telegram": "^2.25.11"
+  }
+}
