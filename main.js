@@ -33,7 +33,7 @@ async function main() {
             const channel = await client.getEntity(event.message.peerId);
             const channelUsername = channel.username ? channel.username.toLowerCase() : null;
 
-            if (channelUsername && SOURCE_CHANNELS.includes(channelUsername) && keywords.some(keyword => inputString.includes(keyword))) {
+            if (channelUsername && SOURCE_CHANNELS.includes(channelUsername) && keywords.filter(keyword => inputString.includes(keyword)).length >= 3) {
                 try {
                     await client.sendMessage(TARGET_CHANNEL, { message: event.message.message });
                     console.log(event.message.message)
